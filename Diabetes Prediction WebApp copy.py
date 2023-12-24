@@ -8,7 +8,6 @@ This is a temporary script file.
 import numpy as np
 import pickle
 import streamlit as st
-import cv2
 
 loaded_model = pickle.load(open('trained_model.sav', 'rb'))
 
