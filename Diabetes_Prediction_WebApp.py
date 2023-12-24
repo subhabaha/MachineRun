@@ -4,6 +4,7 @@ Spyder Editor
 
 This is a temporary script file.
 """
+pip install -r requirements.txt
 
 import numpy as np
 import pickle
