@@ -18,7 +18,7 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
 # Load the saved model
-model = tf.keras.models.load_model(r"C:\Users\chand\OneDrive\Desktop\Movement Detection.v2i.clip\machine_model.h5")
+model = tf.keras.models.load_model(r"machine_model.h5")
 
 def main():
     # Set the layout
