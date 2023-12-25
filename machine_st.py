@@ -31,7 +31,7 @@ def main():
         subprocess.run(['curl --output model.h5 "https://github.com/subhabaha/MachineRun/blob/main/machine_model.h5"'], shell=True)
         yoyo = "ok"
     else:
-        yoyo = "not ok"
+        yoyo = "not ok2"
 
     st.write(f"result is: {yoyo}")
 
