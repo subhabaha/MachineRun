@@ -176,7 +176,7 @@ def get_machine_status(model, video):
 
         # Check for consecutive frames and update machine status
         if status_chk >= consecutive_frames_threshold:
-            st.write("\033[1A\x1b[2K", end="")
+            st.empty()
             st.write(f"Machine Status: {status}")
             status_chk = 0
 
