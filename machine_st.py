@@ -124,10 +124,6 @@ def get_machine_status_and_log(model):
             print(f"Machine Status: {status}")
             status_chk = 0
 
-        # Check for the 'q' key to exit the loop
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
         frame_count += 1
 
     # Release the webcam capture object and close the OpenCV window
