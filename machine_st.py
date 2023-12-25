@@ -177,7 +177,7 @@ def get_machine_status(model, video):
 
         # Check for consecutive frames and update machine status
         if status_chk >= consecutive_frames_threshold:
-            with numbers.container():
+            with clear.container():
                 st.write(f"Machine Status: {status}")
                 status_chk = 0
 
@@ -185,7 +185,6 @@ def get_machine_status(model, video):
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
-
 
 # Set the layout
 st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
