@@ -187,7 +187,7 @@ def get_machine_status(model, video):
     cap.release()
 
 # Set the layout
-st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
+#st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
 
 # Main title
 st.title("Machine Status Monitoring App")
