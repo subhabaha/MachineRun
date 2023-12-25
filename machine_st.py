@@ -14,12 +14,8 @@ import numpy as np
 from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
-import urllib.request
+import subprocess
 
-def load_model():
-    if not os.path.isfile('models/model.h5'):
-        model = urllib.request.urlretrieve('https://github.com/subhabaha/MachineRun/blob/main/models/machine_model.h5', 'model.h5')
-    return tf.keras.models.load_model(model)
 
 def main():
     # Set the layout
@@ -29,7 +25,9 @@ def main():
     st.title("Machine Status Monitoring App")
 
     # Load the saved model
-    model = load_model()
+    if not os.path.isfile('models/model.h5'):
+        subprocess.run(['curl --output model.h5 "media.githubusercontent.com/media/subhabaha/DiabetesPrediction/main/models/machine_model.h5"'], shell=True)
+    model = tf.keras.models.load_model('model.h5')
 
     # Button to execute the code
     if st.button("Execute Code"):
