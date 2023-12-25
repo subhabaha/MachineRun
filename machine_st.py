@@ -26,14 +26,14 @@ def main():
     # Main title
     st.title("Machine Status Monitoring App")
 
-    st.write("ok")
-
     # Load the saved model
     if not os.path.isfile('model.h5'):
         subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
-        st.write(print("ok"))
+        yoyo = "ok"
     else:
-        st.write(print("not ok"))
+        yoyo = "not ok"
+
+    st.write(f{yoyo})
 
     # Button to execute the code
     if st.button("Execute Code"):
