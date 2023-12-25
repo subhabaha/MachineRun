@@ -17,28 +17,28 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 
-def main():
-    # Set the layout
-    st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
 
-    # Main title
-    st.title("Machine Status Monitoring App")
+# Set the layout
+st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
 
-    # Load the saved model
-    model = tf.keras.models.load_model('machine_model_temp.h5')
+# Main title
+st.title("Machine Status Monitoring App")
 
-    # Button to execute the code
-    if st.button("Execute Code"):
-        # Call the function to get the machine status and log
-        machine_status = get_machine_status_and_log(model)
+# Load the saved model
+model = tf.keras.models.load_model('machine_model_temp.h5')
 
-        # Display the machine status
-        st.subheader("Machine Status")
-        st.info(machine_status)
+# Button to execute the code
+if st.button("Execute Code"):
+    # Call the function to get the machine status and log
+    machine_status = get_machine_status_and_log(model)
 
-        # Display the machine status log
-        st.subheader("Machine Status Monitoring Log")
-        st.info(print(get_machine_status_and_log(model)))
+    # Display the machine status
+    st.subheader("Machine Status")
+    st.info(machine_status)
+
+    # Display the machine status log
+    st.subheader("Machine Status Monitoring Log")
+    st.info(print(get_machine_status_and_log(model)))
 
 def get_machine_status_and_log(model): 
     frame_count = 0
@@ -130,7 +130,3 @@ def get_machine_status_and_log(model):
     cap.release()
     
     return status
-
-if __name__ == "__main__":
-    main()
-
