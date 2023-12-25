@@ -126,7 +126,6 @@ def get_machine_status_and_log():
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
-    cv2.destroyAllWindows()
     
     return status
 
