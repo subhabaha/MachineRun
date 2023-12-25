@@ -27,8 +27,8 @@ def main():
     st.title("Machine Status Monitoring App")
 
     # Load the saved model
-    if not os.path.isfile('model.h5'):
-        subprocess.run(['curl --output model.h5 "https://github.com/subhabaha/MachineRun/blob/main/machine_model.h5"'], shell=True)
+    if os.path.isfile('model.h5'):
+        subprocess.run(['curl --output model.h5 "media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
         yoyo = "ok"
     else:
         yoyo = "not ok2"
