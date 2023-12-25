@@ -16,7 +16,6 @@ from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
 from streamlit_option_menu import option_menu
-clear = st.empty()
 
 def get_log(model, video): 
     frame_count = 0
@@ -117,6 +116,7 @@ def get_machine_status(model, video):
     status_chk = 0
     status1 = ""
     status = ""
+    clear = st.empty()
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
@@ -187,7 +187,7 @@ def get_machine_status(model, video):
     cap.release()
 
 # Set the layout
-#st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wide")
 
 # Main title
 st.title("Machine Status Monitoring App")
