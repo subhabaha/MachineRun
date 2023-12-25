@@ -86,7 +86,8 @@ def get_log(model, video):
         if frame_count % screenshot_frames == 0:
             datetime_ist = datetime.now(IST)
             current_time = datetime_ist.strftime("%H:%M:%S")
-            current_day = date.today()
+            today = date.today()
+            current_day = today.strftime("%A")
             screenshot_filename = f"screenshot_{current_time}.png_{current_day}"
             cv2.imwrite(screenshot_filename, frame)
             if prediction > 0.5:
@@ -170,7 +171,8 @@ def get_machine_status(model, video):
         if frame_count % screenshot_frames == 0:
             datetime_ist = datetime.now(IST)
             current_time = datetime_ist.strftime("%H:%M:%S")
-            current_day = date.today()
+            today = date.today()
+            current_day = today.strftime("%A")
             screenshot_filename = f"screenshot_{current_time}.png"
             cv2.imwrite(screenshot_filename, frame)
             if prediction > 0.5:
