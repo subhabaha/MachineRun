@@ -4,4 +4,4 @@ tensorflow
 numpy
 matplotlib
 datetime
-streamlit_options_menu
+streamlit_option_menu
