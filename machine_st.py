@@ -27,7 +27,6 @@ def main():
 
     # Load the saved model
     model = tf.keras.models.load_model('machine_model_temp.h5')
-    st.write({model.summary()})
 
     # Button to execute the code
     if st.button("Execute Code"):
