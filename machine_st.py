@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 from streamlit_option_menu import option_menu
 import pytz
+from datetime import date
 
 def get_log(model, video): 
     frame_count = 0
@@ -85,7 +86,8 @@ def get_log(model, video):
         if frame_count % screenshot_frames == 0:
             datetime_ist = datetime.now(IST)
             current_time = datetime_ist.strftime("%H:%M:%S")
-            screenshot_filename = f"screenshot_{current_time}.png"
+            current_day = date.today()
+            screenshot_filename = f"screenshot_{current_time}.png_{current_day}"
             cv2.imwrite(screenshot_filename, frame)
             if prediction > 0.5:
                 status = "Running"
@@ -166,7 +168,9 @@ def get_machine_status(model, video):
 
         # Capture a screenshot at the specified interval
         if frame_count % screenshot_frames == 0:
-            current_time = datetime.now().strftime("%H:%M:%S")
+            datetime_ist = datetime.now(IST)
+            current_time = datetime_ist.strftime("%H:%M:%S")
+            current_day = date.today()
             screenshot_filename = f"screenshot_{current_time}.png"
             cv2.imwrite(screenshot_filename, frame)
             if prediction > 0.5:
