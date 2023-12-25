@@ -26,8 +26,8 @@ def main():
     st.title("Machine Status Monitoring App")
 
     # Load the saved model
-    if not os.path.isfile('model.h5'):
-        subprocess.run(['curl --output model.h5 "media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
+    if os.path.isfile('machine_model.h5'):
+        subprocess.run(['curl --output machine_model.h5 "media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
         st.write("ok")
     #model = tf.keras.models.load_model('machine_model.h5')
 
