@@ -214,14 +214,12 @@ with st.sidebar:
         icons = ["lightning-charge-fill", "list-columns"],
         default_index = 0)
 
-# Button to execute the code
-if st.button("Execute Code"):
-    if selected == "Machine Status":
-        # Call the function to get the machine status and log
-        machine_status = get_machine_status(model, video_path)
-        # Display the machine status
-        st.subheader("Machine Status")
-        st.write(machine_status)
-    
-    if selected == "Machine runtime log":
-        get_log(model, video_path)
+if selected == "Machine Status":
+    # Call the function to get the machine status and log
+    machine_status = get_machine_status(model, video_path)
+    # Display the machine status
+    st.subheader("Machine Status")
+    st.write(machine_status)
+
+if selected == "Machine runtime log":
+    get_log(model, video_path)
