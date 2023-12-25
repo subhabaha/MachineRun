@@ -18,7 +18,7 @@ import urllib.request
 
 def load_model():
     if not os.path.isfile('models/model.h5'):
-        urllib.request.urlretrieve('https://github.com/subhabaha/MachineRun/main/models/machine_model.h5', 'model.h5')
+        urllib.request.urlretrieve('https://github.com/subhabaha/MachineRun/blob/main/models/machine_model.h5', 'model.h5')
     return tf.keras.models.load_model('model.h5')
 
 def main():
