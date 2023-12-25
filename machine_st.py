@@ -18,7 +18,8 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
 # Load the saved model
-model = tf.keras.models.load_model("machine_model.h5")
+if not os.path.isfile('model.h5'):
+    subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
 
 def main():
     # Set the layout
