@@ -17,13 +17,6 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import subprocess
 
-# Load the saved model
-if not os.path.isfile('model.h5'):
-    subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
-    print("ok")
-else:
-    print("not ok")
-
 #model = tf.keras.models.load_model('modelqw.h5')
 
 def main():
@@ -47,6 +40,14 @@ def main():
         st.info(print(get_machine_status_and_log()))
 
 def get_machine_status_and_log():
+    # Load the saved model
+    if not os.path.isfile('model.h5'):
+        subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
+        print("ok")
+    else:
+        print("not ok")
+
+    
     frame_count = 0
     running_frames = 0
     not_running_frames = 0
