@@ -31,7 +31,7 @@ def main():
     # Button to execute the code
     if st.button("Execute Code"):
         # Call the function to get the machine status and log
-        machine_status = get_machine_status_and_log()
+        machine_status = get_machine_status_and_log(model)
 
         # Display the machine status
         st.subheader("Machine Status")
@@ -39,9 +39,9 @@ def main():
 
         # Display the machine status log
         st.subheader("Machine Status Monitoring Log")
-        st.info(print(get_machine_status_and_log()))
+        st.info(print(get_machine_status_and_log(model)))
 
-def get_machine_status_and_log(): 
+def get_machine_status_and_log(model): 
     frame_count = 0
     running_frames = 0
     not_running_frames = 0
