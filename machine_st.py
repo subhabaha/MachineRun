@@ -28,7 +28,7 @@ def main():
     # Load the saved model
     if os.path.isfile('model.h5'):
         subprocess.run(['curl --output model.h5 "media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
-    model = tf.keras.models.load_model('model.h5')
+    model = tf.keras.models.load_model('machine_model.h5')
 
     # Button to execute the code
     if st.button("Execute Code"):
