@@ -11,12 +11,15 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 import cv2
 import numpy as np
-from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
-import subprocess
+import urllib.request
 
+def load_model():
+    if not os.path.isfile('model.h5'):
+        urllib.request.urlretrieve('https://github.com/subhabaha/MachineRun/main/models/machine_model.h5', 'model.h5')
+    return tensorflow.keras.models.load_model('model.h5')
 
 def main():
     # Set the layout
@@ -26,9 +29,7 @@ def main():
     st.title("Machine Status Monitoring App")
 
     # Load the saved model
-    if not os.path.isfile('models/model.h5'):
-        subprocess.run(['curl --output model.h5 "media.githubusercontent.com/media/subhabaha/MachineRun/main/models/machine_model.h5"'], shell=True)
-    model = tf.keras.models.load_model('model.h5')
+    model = load_model()
 
     # Button to execute the code
     if st.button("Execute Code"):
