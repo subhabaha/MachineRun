@@ -26,7 +26,7 @@ def main():
     # Main title
     st.title("Machine Status Monitoring App")
 
-    st.write(print("ok"))
+    st.write("ok")
 
     # Load the saved model
     if not os.path.isfile('model.h5'):
