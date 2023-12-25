@@ -31,7 +31,7 @@ def main():
         st.write("ok")
     else:
         st.write("not ok")
-    #model = tf.keras.models.load_model('machine_model.h5')
+    #model = tf.keras.models.load_model('model.h5')
 
     # Button to execute the code
     if st.button("Execute Code"):
