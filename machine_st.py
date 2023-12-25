@@ -54,7 +54,8 @@ def get_machine_status_and_log():
     status = ""
     
     # Open a connection to the webcam (0 represents the default webcam)
-    cap = cv2.VideoCapture(0)
+    video_path = 
+    cap = cv2.VideoCapture(video_path)
 
     # Get the frames per second (fps) of the webcam
     fps = cap.get(cv2.CAP_PROP_FPS)
