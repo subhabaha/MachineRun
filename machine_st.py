@@ -16,7 +16,7 @@ from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-def get_machine_status_and_log(model): 
+def get_machine_status_and_log(model, video): 
     frame_count = 0
     running_frames = 0
     not_running_frames = 0
@@ -28,7 +28,7 @@ def get_machine_status_and_log(model):
     status = ""
     
     # Open a connection to the webcam (0 represents the default webcam)
-    video_path = "sample video.mp4"
+    video_path = video
     cap = cv2.VideoCapture(video_path)
 
     # Get the frames per second (fps) of the webcam
@@ -87,7 +87,7 @@ def get_machine_status_and_log(model):
                 status = "Running"
             else:
                 status = "Not Running"
-            print(f"{current_time} - Screenshot captured: {screenshot_filename}, Machine {status}")
+            st.write(f"{current_time} - Screenshot captured: {screenshot_filename}, Machine {status}")
             if status == status1:
                 status_chk += 1
             else:
@@ -116,15 +116,16 @@ st.title("Machine Status Monitoring App")
 
 # Load the saved model
 model = tf.keras.models.load_model('machine_model_temp.h5')
+video_path = "sample video.mp4"
 
 # Button to execute the code
 if st.button("Execute Code"):
     # Call the function to get the machine status and log
-    machine_status = get_machine_status_and_log(model)
+    machine_status = get_machine_status_and_log(model, video_path)
 
     # Display the machine status
     st.subheader("Machine Status")
-    st.info(machine_status)
+    st.write(machine_status)
 
     # Display the machine status log
     st.subheader("Machine Status Monitoring Log")
