@@ -179,6 +179,7 @@ def get_machine_status(model, video):
         if count == 0:
             with clear.container():
                 st.write(f"Machine Status: {status_temp}")
+            count = 1
         # Check for consecutive frames and update machine status
         if status_chk >= consecutive_frames_threshold:
             with clear.container():
