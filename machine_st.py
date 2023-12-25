@@ -15,7 +15,6 @@ import numpy as np
 from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
-import subprocess
 
 
 def main():
@@ -124,9 +123,6 @@ def get_machine_status_and_log(model):
         if status_chk >= consecutive_frames_threshold:
             print(f"Machine Status: {status}")
             status_chk = 0
-
-        # Display the frame with prediction
-        cv2.imshow('Webcam', frame)
 
         # Check for the 'q' key to exit the loop
         if cv2.waitKey(1) & 0xFF == ord('q'):
