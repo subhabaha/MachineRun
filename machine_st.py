@@ -18,7 +18,6 @@ from datetime import datetime
 from streamlit_option_menu import option_menu
 import pytz
 from datetime import date
-clear = st.empty()
 
 def get_log(model, video): 
     frame_count = 0
@@ -219,6 +218,7 @@ with st.sidebar:
         icons = ["lightning-charge-fill", "list-columns"],
         default_index = 0)
 
+clear = st.empty()
 if selected == "Machine Status":
     # Display the machine status
     st.subheader("Machine Status")
