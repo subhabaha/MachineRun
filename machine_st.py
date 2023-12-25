@@ -33,7 +33,7 @@ def main():
     else:
         yoyo = "not ok"
 
-    st.write(f{yoyo})
+    st.write(f"result is: {yoyo}")
 
     # Button to execute the code
     if st.button("Execute Code"):
