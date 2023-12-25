@@ -81,6 +81,7 @@ def get_log(model, video):
 
         # Capture a screenshot at the specified interval
         if frame_count % screenshot_frames == 0:
+            datetime_ist = datetime.now(IST)
             current_time = datetime_ist.strftime("%H:%M:%S")
             screenshot_filename = f"screenshot_{current_time}.png"
             cv2.imwrite(screenshot_filename, frame)
