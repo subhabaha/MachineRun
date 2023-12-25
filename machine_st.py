@@ -18,8 +18,7 @@ from datetime import datetime
 import subprocess
 
 # Load the saved model
-if not os.path.isfile('model.h5'):
-    model = tf.keras.models.load_model(subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True))
+model = tf.keras.models.load_model(subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True))
 
 #model = tf.keras.models.load_model('modelqw.h5')
 
