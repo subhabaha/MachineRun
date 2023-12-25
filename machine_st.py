@@ -125,6 +125,7 @@ def get_machine_status(model, video):
     status_temp = "Loading ..."
     clear = st.empty()
     count = 0
+    IST = pytz.timezone('Asia/Kolkata') 
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
