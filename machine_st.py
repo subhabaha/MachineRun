@@ -15,14 +15,13 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor
 import subprocess
 
 # Load the saved model
 if not os.path.isfile('model.h5'):
     subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
 
-#model = tf.keras.models.load_model('model.h5', compile=False)
+model = tf.keras.models.load_model('modelqw.h5')
 
 def main():
     # Set the layout
