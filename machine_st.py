@@ -6,7 +6,8 @@
 
 import streamlit as st
 import tensorflow as tf
-from tensorflow.keras import layers, load_model
+from tensorflow.keras import layers
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 import cv2
