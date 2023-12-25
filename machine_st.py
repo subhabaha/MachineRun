@@ -29,9 +29,9 @@ def main():
     # Load the saved model
     if not os.path.isfile('model.h5'):
         subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
-        st.info(print("ok"))
+        st.write(print("ok"))
     else:
-        st.info(print("not ok"))
+        st.write(print("not ok"))
 
     # Button to execute the code
     if st.button("Execute Code"):
