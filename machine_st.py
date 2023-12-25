@@ -16,6 +16,7 @@ from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
+import subprocess
 
 # Load the saved model
 if not os.path.isfile('model.h5'):
