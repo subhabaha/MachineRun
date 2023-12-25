@@ -128,16 +128,6 @@ def get_machine_status(model, video):
     screenshot_interval = 1  # 1-second interval
     screenshot_frames = int(screenshot_interval * fps)  # Number of frames to wait for 1 second
 
-    # Initialize variables
-    frame_count = 0
-    running_frames = 0
-    not_running_frames = 0
-    skip_frames = 2  # Skip 2 frames in between each prediction
-    consecutive_frames_threshold = 15
-    machine_status = None
-    status_chk = 0
-    status1 = ""
-
     while cap.isOpened():
         ret, frame = cap.read()
 
@@ -186,15 +176,13 @@ def get_machine_status(model, video):
 
         # Check for consecutive frames and update machine status
         if status_chk >= consecutive_frames_threshold:
-            print(f"Machine Status: {status}")
+            st.write(f"Machine Status: {status}")
             status_chk = 0
 
         frame_count += 1
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
-    
-    return status
 
 
 # Set the layout
@@ -215,11 +203,12 @@ with st.sidebar:
         default_index = 0)
 
 if selected == "Machine Status":
-    # Call the function to get the machine status and log
-    machine_status = get_machine_status(model, video_path)
     # Display the machine status
     st.subheader("Machine Status")
-    st.write(machine_status)
+    # Call the function to get the machine status and log
+    machine_status = get_machine_status(model, video_path)
 
 if selected == "Machine runtime log":
+    # Display the machine status
+    st.subheader("Machine runtime log")
     get_log(model, video_path)
