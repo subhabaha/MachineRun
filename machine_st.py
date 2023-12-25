@@ -27,6 +27,7 @@ def get_log(model, video):
     status_chk = 0
     status1 = ""
     status = ""
+    IST = pytz.timezone('Asia/Kolkata') 
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
