@@ -21,6 +21,8 @@ import subprocess
 if not os.path.isfile('model.h5'):
     subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
     print("ok")
+else:
+    print("not ok")
 
 #model = tf.keras.models.load_model('modelqw.h5')
 
