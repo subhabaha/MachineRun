@@ -28,7 +28,7 @@ def main():
 
     # Load the saved model
     if not os.path.isfile('model.h5'):
-        subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
+        subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/subhabaha/MachineRun/blob/main/machine_model.h5"'], shell=True)
         yoyo = "ok"
     else:
         yoyo = "not ok"
