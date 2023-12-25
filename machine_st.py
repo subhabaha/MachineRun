@@ -131,9 +131,6 @@ def get_machine_status(model, video):
     screenshot_frames = int(screenshot_interval * fps)  # Number of frames to wait for 1 second
 
     while cap.isOpened():
-        if count == 0:
-            st.write(f"Machine Status: {status}")
-        count = 1
         ret, frame = cap.read()
 
         if not ret:
@@ -180,11 +177,11 @@ def get_machine_status(model, video):
 
 
         # Check for consecutive frames and update machine status
-        if status_chk >= consecutive_frames_threshold:
+        if status_chk >= consecutive_frames_threshold or count == 0:
             with clear.container():
                 st.write(f"Machine Status: {status}")
                 status_chk = 0
-
+        count = 1
         frame_count += 1
 
     # Release the webcam capture object and close the OpenCV window
