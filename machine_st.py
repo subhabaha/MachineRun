@@ -16,6 +16,7 @@ from tensorflow.keras.preprocessing import image
 import matplotlib.pyplot as plt
 from datetime import datetime
 from streamlit_option_menu import option_menu
+clear = st.empty()
 
 def get_log(model, video): 
     frame_count = 0
@@ -176,9 +177,9 @@ def get_machine_status(model, video):
 
         # Check for consecutive frames and update machine status
         if status_chk >= consecutive_frames_threshold:
-            st.empty()
-            st.write(f"Machine Status: {status}")
-            status_chk = 0
+            with numbers.container():
+                st.write(f"Machine Status: {status}")
+                status_chk = 0
 
         frame_count += 1
 
