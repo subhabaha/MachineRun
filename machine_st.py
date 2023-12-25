@@ -17,7 +17,6 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import subprocess
 
-#model = tf.keras.models.load_model('modelqw.h5')
 
 def main():
     # Set the layout
@@ -29,11 +28,7 @@ def main():
     # Load the saved model
     if os.path.isfile('model.h5'):
         subprocess.run(['curl --output model.h5 "media.githubusercontent.com/media/subhabaha/MachineRun/main/machine_model.h5"'], shell=True)
-        yoyo = "ok"
-    else:
-        yoyo = "not ok2"
-
-    st.write(f"result is: {yoyo}")
+    model = tf.keras.models.load_model('model.h5')
 
     # Button to execute the code
     if st.button("Execute Code"):
