@@ -43,6 +43,16 @@ def main():
         st.info(print(get_machine_status_and_log()))
 
 def get_machine_status_and_log():
+    frame_count = 0
+    running_frames = 0
+    not_running_frames = 0
+    skip_frames = 2  # Skip 2 frames in between each prediction
+    consecutive_frames_threshold = 15
+    machine_status = None
+    status_chk = 0
+    status1 = ""
+    status = ""
+    
     # Open a connection to the webcam (0 represents the default webcam)
     cap = cv2.VideoCapture(0)
 
