@@ -26,7 +26,7 @@ def get_log(model, video):
     machine_status = None
     status_chk = 0
     status1 = ""
-    status = ""
+    status = "Loading ..."
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
