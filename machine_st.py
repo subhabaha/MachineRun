@@ -18,6 +18,7 @@ from datetime import datetime
 from streamlit_option_menu import option_menu
 import pytz
 from datetime import date
+clear = st.empty()
 
 def get_log(model, video): 
     frame_count = 0
