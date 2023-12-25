@@ -115,7 +115,8 @@ def get_machine_status(model, video):
     machine_status = None
     status_chk = 0
     status1 = ""
-    status = "Loading ..."
+    status = ""
+    status_temp = "Loading ..."
     clear = st.empty()
     count = 0
     
@@ -175,9 +176,11 @@ def get_machine_status(model, video):
                 status_chk = 0
             status1 = status
 
-
+        if count == 0:
+            with clear.container():
+                st.write(f"Machine Status: {status_temp}")
         # Check for consecutive frames and update machine status
-        if status_chk >= consecutive_frames_threshold or count == 0:
+        if status_chk >= consecutive_frames_threshold:
             with clear.container():
                 st.write(f"Machine Status: {status}")
                 status_chk = 0
