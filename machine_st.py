@@ -115,8 +115,9 @@ def get_machine_status(model, video):
     machine_status = None
     status_chk = 0
     status1 = ""
-    status = ""
+    status = "Loading ..."
     clear = st.empty()
+    count = 0
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
@@ -130,6 +131,9 @@ def get_machine_status(model, video):
     screenshot_frames = int(screenshot_interval * fps)  # Number of frames to wait for 1 second
 
     while cap.isOpened():
+        if count == 0:
+            st.write(f"Machine Status: {status}")
+        count = 1
         ret, frame = cap.read()
 
         if not ret:
