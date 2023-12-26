@@ -218,16 +218,14 @@ with st.sidebar:
         icons = ["lightning-charge-fill", "list-columns"],
         default_index = 0)
 
-clear = st.empty()
+
 if selected == "Machine Status":
     # Display the machine status
     st.subheader("Machine Status")
     # Call the function to get the machine status and log
-    with clear.container():
-        machine_status = get_machine_status(model, video_path)
+    machine_status = get_machine_status(model, video_path)
 
 if selected == "Machine runtime log":
     # Display the machine status
     st.subheader("Machine runtime log")
-    with clear.container():
-        get_log(model, video_path)
+    get_log(model, video_path)
