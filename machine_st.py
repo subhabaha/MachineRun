@@ -206,7 +206,7 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-        st.write(current_time[:1])
+        st.write(current_time[:4])
 
         #if status == "Running":
             #if current_day == "Saturday" or current_day == "Sunday":
