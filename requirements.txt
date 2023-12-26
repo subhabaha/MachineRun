@@ -5,3 +5,4 @@ numpy
 matplotlib
 datetime
 streamlit_option_menu
+pywhatkit
