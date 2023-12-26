@@ -110,12 +110,12 @@ def get_log(model, video):
 
         frame_count += 1
 
-        '''if status == "Running":
-            if current_day == "Saturday" or current_day == "Sunday":
-                pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
-            else:
+        #if status == "Running":
+            #if current_day == "Saturday" or current_day == "Sunday":
+                #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
+            #else:
                 #if current_time > 00:00:00:
-                    pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)'''
+                    #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
@@ -206,14 +206,14 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-        st.write(current_time)
+        st.write(current_time[:1])
 
-        '''if status == "Running":
-            if current_day == "Saturday" or current_day == "Sunday":
-                pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
-            else:
+        #if status == "Running":
+            #if current_day == "Saturday" or current_day == "Sunday":
+                #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
+            #else:
                 #if current_time > 00:00:00:
-                    pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)'''
+                    #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
