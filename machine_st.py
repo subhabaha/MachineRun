@@ -96,6 +96,8 @@ def get_log(model, video):
             else:
                 status = "Not Running"
             st.write(f"{current_time} - Screenshot captured: {screenshot_filename}, Machine {status}")
+            img_to_display = np.squeeze(img_array, axis=0)
+            st.imshow(img_to_display)
             if status == status1:
                 status_chk += 1
             else:
