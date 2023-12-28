@@ -65,7 +65,7 @@ def get_log(model, video):
             continue
 
         # Resize the frame to match the input size of the model
-        frame = cv2.resize(frame, (224, 224))
+        frame = cv2.resize(frame, (128, 128))
 
         # Preprocess the frame
         img_array = image.img_to_array(frame)
@@ -160,7 +160,7 @@ def get_machine_status(model, video):
             continue
 
         # Resize the frame to match the input size of the model
-        frame = cv2.resize(frame, (224, 224))
+        frame = cv2.resize(frame, (128, 128))
 
         # Preprocess the frame
         img_array = image.img_to_array(frame)
