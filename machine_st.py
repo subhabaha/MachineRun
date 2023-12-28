@@ -226,7 +226,7 @@ st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wi
 st.title("Machine Status Monitoring App")
 
 # Load the saved model
-model = tf.keras.models.load_model('machine_model_temp.h5')
+model = tf.keras.models.load_model('machine_model_1temp.h5')
 video_path = "rtsp://REDACTED/cam/realmonitor?channel=1&subtype=0"
 
 with st.sidebar:
