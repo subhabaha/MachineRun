@@ -123,6 +123,7 @@ def get_machine_status(model, video):
     count = 0
     flag_temp = 0
     IST = pytz.timezone('Asia/Kolkata') 
+    em = EmailMessage()
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
@@ -196,7 +197,6 @@ def get_machine_status(model, video):
                 recipient = "chandrapauldas01@gmail.com"
                 subject = f"⚠️ Warning! Machine is {status} ⚠️"
                 message = f"The Machine was observed {status} at {current_time} IST on {current_day}. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
-                em = EmailMessage()
                 em['From'] = sender_email
                 em['To'] = recipient
                 em['Subject'] = subject
