@@ -130,7 +130,6 @@ def get_machine_status(model, video):
     recipient = "chandrapauldas01@gmail.com"
     em['From'] = sender_email
     em['To'] = recipient
-    em['Subject'] = subject
     context = ssl.create_default_context()
     
     # Open a connection to the webcam (0 represents the default webcam)
@@ -202,6 +201,7 @@ def get_machine_status(model, video):
                 st.write(f"Machine Status: {status}")
                 subject = f"⚠️ Warning! Machine is {status} ⚠️"
                 message = f"The Machine was observed {status} at {current_time} IST on {current_day}. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
+                em['Subject'] = subject
                 em.set_content(message)
                 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                     smtp.login(sender_email, sender_password)
