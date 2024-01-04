@@ -193,12 +193,12 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-       '''if status == "Not Running":
-            chk_time = int(current_time[3:5])
-            if chk_time > chk_time_1 + 5 and flag_temp == 0:
-                st.write("WARNING! MACHINE IS STOPPED FOR MORE THAN 5 MINS")
-                flag_temp = 1
-            chk_time_1 = chk_time'''
+       #if status == "Not Running":
+            #chk_time = int(current_time[3:5])
+            #if chk_time > chk_time_1 + 5 and flag_temp == 0:
+                #st.write("WARNING! MACHINE IS STOPPED FOR MORE THAN 5 MINS")
+                #flag_temp = 1
+            #chk_time_1 = chk_time
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
