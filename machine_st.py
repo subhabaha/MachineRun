@@ -18,7 +18,9 @@ from datetime import datetime
 from streamlit_option_menu import option_menu
 import pytz
 from datetime import date
-#import pywhatkit
+from email.message import EmailMessage
+import ssl
+import smtplib
 
 def get_log(model, video): 
     frame_count = 0
