@@ -213,7 +213,7 @@ def get_machine_status(model, video):
                     smtp.login(sender_email, sender_password)
                     smtp.sendmail(sender_email, recipient, em.as_string())
                 flag_temp = 1
-            if status_chk == 0
+            if status_chk == 0:
                 chk_time_1 = chk_time
                 chk_time_1_act = current_time
 
