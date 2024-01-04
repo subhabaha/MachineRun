@@ -121,11 +121,6 @@ def get_machine_status(model, video):
     count = 0
     flag_temp = 0
     IST = pytz.timezone('Asia/Kolkata') 
-
-    sender_email = "chandrapaulcs2001@gmail.com"
-    sender_password = "lbjc utkq kawe fcvd"
-    recipient = "chandrapauldas01@gmail.com"
-    subject = "⚠️ Warning! Machine is not running ⚠️"
     
     # Open a connection to the webcam (0 represents the default webcam)
     video_path = video
@@ -194,14 +189,11 @@ def get_machine_status(model, video):
         if status_chk >= consecutive_frames_threshold:
             with clear.container():
                 st.write(f"Machine Status: {status}")
-                status_chk = 0
-        count = 1
-        frame_count += 1
-
-        '''if status == "Running":
-            chk_time = int(current_time[3:5])
-            if chk_time > chk_time_1 + 1 and flag_temp == 0:
-                message = f"The Machine was observed not running first at {chk_time_1_act} IST. It's been 1 minutues, and we have observed the machine is still not running. Current time is {current_time} IST. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
+                sender_email = "chandrapaulcs2001@gmail.com"
+                sender_password = "lbjc utkq kawe fcvd"
+                recipient = "chandrapauldas01@gmail.com"
+                subject = f"⚠️ Warning! Machine is {status} ⚠️"
+                message = f"The Machine was observed {status} at {current_time} IST on {current_day}. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
                 em = EmailMessage()
                 em['From'] = sender_email
                 em['To'] = recipient
@@ -212,11 +204,9 @@ def get_machine_status(model, video):
                 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                     smtp.login(sender_email, sender_password)
                     smtp.sendmail(sender_email, recipient, em.as_string())
-                st.write("SENT")
-                flag_temp = 1
-            if status_chk == 0:
-                chk_time_1 = chk_time
-                chk_time_1_act = current_time'''
+                status_chk = 0
+        count = 1
+        frame_count += 1
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
