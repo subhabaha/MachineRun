@@ -226,7 +226,7 @@ if selected == "Machine Status":
     # Display the machine status
     st.subheader("Machine Status")
     # Call the function to get the machine status and log
-    get_machine_status(model, video_path)
+    status = get_machine_status(model, video_path)
 
 if selected == "Machine runtime log":
     # Display the machine status
