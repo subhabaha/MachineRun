@@ -43,16 +43,6 @@ def get_log(model, video):
     screenshot_interval = 1  # 1-second interval
     screenshot_frames = int(screenshot_interval * fps)  # Number of frames to wait for 1 second
 
-    # Initialize variables
-    frame_count = 0
-    running_frames = 0
-    not_running_frames = 0
-    skip_frames = 2  # Skip 2 frames in between each prediction
-    consecutive_frames_threshold = 15
-    machine_status = None
-    status_chk = 0
-    status1 = ""
-
     while cap.isOpened():
         ret, frame = cap.read()
 
@@ -111,13 +101,6 @@ def get_log(model, video):
 
         frame_count += 1
 
-        #if status == "Running":
-            #if current_day == "Saturday" or current_day == "Sunday":
-                #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
-            #else:
-                #if int(current_time[:2]) > 0 and int(current_time[:2]) <= 9:
-                    #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
-
     # Release the webcam capture object and close the OpenCV window
     cap.release()
 
@@ -131,9 +114,12 @@ def get_machine_status(model, video):
     status_chk = 0
     status1 = ""
     status = ""
+    chk_time = 0
+    chk_time_1 = 0
     status_temp = "Loading ..."
     clear = st.empty()
     count = 0
+    flag_temp = 0
     IST = pytz.timezone('Asia/Kolkata') 
     
     # Open a connection to the webcam (0 represents the default webcam)
@@ -207,13 +193,12 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-
-        #if status == "Running":
-            #if current_day == "Saturday" or current_day == "Sunday":
-                #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
-            #else:
-                #if int(current_time[:2]) > 0 and int(current_time[:2]) <= 9:
-                    #pywhatkit.sendwhatmsg_instantly(phone_no = +918777625140, massage = "WARNING! Machine is running", wait_time = 10)
+        if status == "Not Running":
+            chk_time = int(current_time[3:5])
+            if chk_time > chk_time_1 + 5 and flag_temp = 0:
+                st.write("WARNING! MACHINE IS STOPPED FOR MORE THAN 5 MINS")
+                flag_temp = 1
+            chk_time_1 = chk_time
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
