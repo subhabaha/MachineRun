@@ -351,7 +351,7 @@ if selected == "Machine runtime log":
     with col1:
         get_log(model, video_path)
     with col2:
-        st.button("Get latest machine snap"):
+        if st.button("Get latest machine snap"):
             snap = get_snap(model, video_path)
             img_to_display = np.squeeze(snap, axis=0)
             st.image(img_to_display)
