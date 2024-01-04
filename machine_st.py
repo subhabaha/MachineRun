@@ -193,12 +193,12 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-        if status == "Not Running":
+       '''if status == "Not Running":
             chk_time = int(current_time[3:5])
             if chk_time > chk_time_1 + 5 and flag_temp == 0:
                 st.write("WARNING! MACHINE IS STOPPED FOR MORE THAN 5 MINS")
                 flag_temp = 1
-            chk_time_1 = chk_time
+            chk_time_1 = chk_time'''
 
     # Release the webcam capture object and close the OpenCV window
     cap.release()
@@ -226,7 +226,7 @@ if selected == "Machine Status":
     # Display the machine status
     st.subheader("Machine Status")
     # Call the function to get the machine status and log
-    status = get_machine_status(model, video_path)
+    get_machine_status(model, video_path)
 
 if selected == "Machine runtime log":
     # Display the machine status
