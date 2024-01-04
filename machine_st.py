@@ -347,9 +347,10 @@ if selected == "Machine Status":
 if selected == "Machine runtime log":
     # Display the machine status
     st.subheader("Machine runtime log")
-    st.col(1):
+    col1, col2 = st.columns(2)
+    with col1:
         get_log(model, video_path)
-    st.col(2):
+    with col2:
         st.button("Get latest machine snap"):
             snap = get_snap(model, video_path)
             img_to_display = np.squeeze(snap, axis=0)
