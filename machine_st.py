@@ -57,7 +57,7 @@ def get_log(model, video):
             continue
 
         # Resize the frame to match the input size of the model
-        frame = cv2.resize(frame, (224, 224))
+        frame = cv2.resize(frame, (512, 512))
 
         # Preprocess the frame
         img_array = image.img_to_array(frame)
@@ -157,7 +157,7 @@ def get_machine_status(model, video):
             continue
 
         # Resize the frame to match the input size of the model
-        frame = cv2.resize(frame, (224, 224))
+        frame = cv2.resize(frame, (512, 512))
 
         # Preprocess the frame
         img_array = image.img_to_array(frame)
@@ -220,7 +220,7 @@ st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wi
 st.title("Machine Status Monitoring App")
 
 # Load the saved model
-model = tf.keras.models.load_model('machine_model_5jan2.h5')
+model = tf.keras.models.load_model('machine_model_5jan.h5')
 video_path = "rtsp://admin:Admin@123@125.19.34.95:554/cam/realmonitor?channel=1&subtype=0"
 #video_path = "sample video.mp4"
 
