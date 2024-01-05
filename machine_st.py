@@ -127,7 +127,7 @@ def get_machine_status(model, video):
 
     sender_email = "chandrapaulcs2001@gmail.com"
     sender_password = "lbjc utkq kawe fcvd"
-    recipient = "chandrapaulda01@gmail.com"
+    recipient = "chandrapauldas01@gmail.com"
     subject = f"⚠️ Warning! Machine Status changed ⚠️"
     em['From'] = sender_email
     em['To'] = recipient
