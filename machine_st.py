@@ -121,7 +121,7 @@ def get_machine_status(model, video):
     status_temp = "Loading ..."
     clear = st.empty()
     count = 0
-    flag_temp = 0
+    i = 0
     IST = pytz.timezone('Asia/Kolkata') 
     em = EmailMessage()
 
@@ -205,16 +205,15 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-        if status == "Running":
+        if status == "Not Running":
             chk_time = int(current_time[3:5])
-            if chk_time > chk_time_1 + 1 and flag_temp == 0:
+            if chk_time == chk_time_1 + 1 + i:
                 message = f"The Machine was observed not running first at {chk_time_1_act} IST. It's been 1 minutues, and we have observed the machine is still not running. Current time is {current_time} IST. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
                 em.set_content(message)
                 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                     smtp.login(sender_email, sender_password)
                     smtp.sendmail(sender_email, recipient, em.as_string())
-                st.write("SENT")
-                flag_temp = 0
+                i += 1
             if status_chk == 0:
                 chk_time_1 = chk_time
                 chk_time_1_act = current_time
