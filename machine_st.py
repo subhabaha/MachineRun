@@ -127,7 +127,7 @@ def get_machine_status(model, video):
 
     sender_email = "chandrapaulcs2001@gmail.com"
     sender_password = "lbjc utkq kawe fcvd"
-    recipient = "chandrapauldas01@gmail.com"
+    recipient = "chandrapaulda01@gmail.com"
     subject = f"⚠️ Warning! Machine Status changed ⚠️"
     em['From'] = sender_email
     em['To'] = recipient
@@ -220,7 +220,7 @@ st.set_page_config(page_title="Machine Status App", page_icon="🤖", layout="wi
 st.title("Machine Status Monitoring App")
 
 # Load the saved model
-model = tf.keras.models.load_model('machine_model_new.h5')
+model = tf.keras.models.load_model('machine_model_5jan2.h5')
 video_path = "rtsp://admin:Admin@123@125.19.34.95:554/cam/realmonitor?channel=1&subtype=0"
 #video_path = "sample video.mp4"
 
