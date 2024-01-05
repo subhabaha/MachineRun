@@ -209,13 +209,7 @@ def get_machine_status(model, video):
             chk_time = int(current_time[3:5])
             if chk_time > chk_time_1 + 1 and flag_temp == 0:
                 message = f"The Machine was observed not running first at {chk_time_1_act} IST. It's been 1 minutues, and we have observed the machine is still not running. Current time is {current_time} IST. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
-                em = EmailMessage()
-                em['From'] = sender_email
-                em['To'] = recipient
-                em['Subject'] = subject
                 em.set_content(message)
-                context = ssl.create_default_context()
-                
                 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                     smtp.login(sender_email, sender_password)
                     smtp.sendmail(sender_email, recipient, em.as_string())
