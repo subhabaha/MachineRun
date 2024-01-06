@@ -2,7 +2,7 @@
 scikit-learn
 opencv-python-headless==4.5.3.56
 tensorflow
-#numpy
+numpy==1.21.5
 matplotlib
 datetime
 streamlit_option_menu
