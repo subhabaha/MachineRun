@@ -128,7 +128,7 @@ def get_machine_status(model, video):
     sender_email = "chandrapaulcs2001@gmail.com"
     sender_password = "lbjc utkq kawe fcvd"
     #recipient = "chandrapauldas01@gmail.com"
-    recipient = "deendayalpandey1@gmail.com"
+    recipient = "chandrapauldas01@gmail.com"
     subject = f"⚠️ Warning! Machine Status changed ⚠️"
     em['From'] = sender_email
     em['To'] = recipient
@@ -206,16 +206,16 @@ def get_machine_status(model, video):
         count = 1
         frame_count += 1
 
-        if status == "Running":
+        if status == "Not Running":
             chk_time = int(current_time[3:5])
-            if chk_time == chk_time_1 + 1 + i:
+            if chk_time == chk_time_1 + 5 + i:
                 st.write("SENT")
-                message = f"The Machine was observed not running first at {chk_time_1_act} IST. It's been {1+i} minutues, and we have observed the machine is still not running. Current time is {current_time} IST. \n\n *This is just a friendly reminder, Ignore if you think it is under the schedule*"
+                message = f"The Machine was observed not running first at {chk_time_1_act} IST. It's been {5+i} minutues, and we have observed the machine is still not running. Current time is {current_time} IST."
                 em.set_content(message)
                 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                     smtp.login(sender_email, sender_password)
                     smtp.sendmail(sender_email, recipient, em.as_string())
-                i += 1
+                i += 5
             if status_chk == 0:
                 chk_time_1 = chk_time
                 chk_time_1_act = current_time
