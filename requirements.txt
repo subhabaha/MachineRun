@@ -1,8 +1,7 @@
-#python_version==3.12
 scikit-learn
 opencv-python-headless==4.5.3.56
 tensorflow
-numpy==1.21.5
+numpy==1.21.2
 matplotlib
 datetime
 streamlit_option_menu
