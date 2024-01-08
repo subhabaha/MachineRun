@@ -131,7 +131,6 @@ def get_machine_status(model, video):
     recipient_list = ["chandrapauldas01@gmail.com", "uflexalert@mintergraph.com"]
     subject = f"⚠️ Warning! Machine Status changed ⚠️"
     em['From'] = sender_email
-    em['To'] = recipient
     em['Subject'] = subject
     context = ssl.create_default_context()
     
@@ -215,6 +214,7 @@ def get_machine_status(model, video):
                 with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
                     smtp.login(sender_email, sender_password)
                     for recipient in recipient_list:
+                        em['To'] = recipient
                         smtp.sendmail(sender_email, recipient, em.as_string())
                 i += 5
             if status_chk == 0:
